@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baseball Auth Test</title>
+</head>
+<body>
+<h1>회원가입</h1>
+<input id="signupEmail" placeholder="email"><br>
+<input id="signupPassword" placeholder="password" type="password"><br>
+<input id="signupNickname" placeholder="nickname"><br>
+<button onclick="signup()">회원가입</button>
+
+<h1>로그인</h1>
+<input id="loginEmail" placeholder="email"><br>
+<input id="loginPassword" placeholder="password" type="password"><br>
+<button onclick="login()">로그인</button>
+
+<h2>JWT Token:</h2>
+<pre id="result"></pre>
+
+<script>
+    const BASE_URL = 'http://localhost:8080/api/auth';
+
+    async function signup() {
+        const res = await fetch(BASE_URL + '/signup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: document.getElementById('signupEmail').value,
+                password: document.getElementById('signupPassword').value,
+                nickname: document.getElementById('signupNickname').value
+            })
+        });
+        document.getElementById('result').textContent = await res.text();
+    }
+
+    async function login() {
+        const res = await fetch(BASE_URL + '/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: document.getElementById('loginEmail').value,
+                password: document.getElementById('loginPassword').value
+            })
+        });
+        const data = await res.text();
+        document.getElementById('result').textContent = data;
+    }
+</script>
+</body>
+</html>
