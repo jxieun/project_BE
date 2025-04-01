@@ -16,8 +16,7 @@
 <input id="loginPassword" placeholder="password" type="password"><br>
 <button onclick="login()">로그인</button>
 
-<h2>JWT Token:</h2>
-<pre id="result"></pre>
+<!--<h2>JWT Token:</h2>-->
 
 <script>
     const BASE_URL = 'http://localhost:8080/api/auth';
@@ -32,7 +31,8 @@
                 nickname: document.getElementById('signupNickname').value
             })
         });
-        document.getElementById('result').textContent = await res.text();
+        const data = await res.text();
+        alert('회원가입 완료!'); // 회원가입 완료 후 알림
     }
 
     async function login() {
@@ -44,8 +44,17 @@
                 password: document.getElementById('loginPassword').value
             })
         });
-        const data = await res.text();
-        document.getElementById('result').textContent = data;
+
+        // 응답 데이터를 JSON으로 파싱
+        const data = await res.json();
+
+        if (data.token) {
+            // JWT 토큰을 localStorage에 저장
+            localStorage.setItem('jwt', data.token);
+            alert('로그인 성공!'); // 로그인 성공 후 알림
+        } else {
+            alert('로그인 실패');
+        }
     }
 </script>
 </body>

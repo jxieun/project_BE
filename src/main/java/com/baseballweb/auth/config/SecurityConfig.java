@@ -34,7 +34,6 @@ public class SecurityConfig {
             .requestMatchers("/api/auth/**", "/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**", "/auth.html",                 // ← 이 줄 추가
                     "/css/**", "/js/**", "/images/**").permitAll()
             .anyRequest().authenticated();
-
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
