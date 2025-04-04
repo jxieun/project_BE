@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+//핵심 비즈니스 로직 구현
 @Service
 @RequiredArgsConstructor
 public class AuthService {
@@ -22,8 +23,8 @@ public class AuthService {
         User user = User.builder()
                 .email(req.getEmail())
                 .password(passwordEncoder.encode(req.getPassword()))
-                .nickname(req.getNickname())
-                .provider("local")
+                //.nickname(req.getNickname())
+                //.provider("local")
                 .build();
 
         userRepository.save(user);
