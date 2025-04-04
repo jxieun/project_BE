@@ -4,6 +4,8 @@ package com.baseballweb.auth.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
+//비즈니스 도메인 객체, 주로 DB에 저장하고 관리됨
+
 @Entity
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
@@ -18,6 +20,6 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    private String nickname;
-    private String provider; // local or kakao
+    //private String nickname;
+    //private String provider; // local or kakao
 }

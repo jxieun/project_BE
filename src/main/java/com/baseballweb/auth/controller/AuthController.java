@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+// 웹MVC의 컨트롤러 역할
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
