@@ -17,6 +17,11 @@ public class QuizService {
 
     private final QuizRepository quizRepository;
 
+    // 퀴즈 데이터를 삽입하는 메서드
+    public Quiz insertQuizData(Quiz quiz) {
+        return quizRepository.save(quiz); // JPA를 통해 퀴즈 데이터 저장
+    }
+
     // 퀴즈 데이터 타입별로 가져오기
     public List<QuizDTO> getQuizzesByType(String type) {
         // 엔티티를 DTO로 변환
@@ -25,6 +30,11 @@ public class QuizService {
                 .map(this::convertToQuizDTO)  // Quiz 엔티티를 QuizDTO로 변환
                 .collect(Collectors.toList());
     }
+
+//    // 퀴즈 데이터 타입별로 가져오기
+//    public List<Quiz> getQuizzesByType(String type) {
+//        return quizRepository.findByType(type);  // `type`에 맞는 퀴즈 리스트를 가져옵니다.
+//    }
 
     // 퀴즈 정답 평가 및 점수 계산
     public QuizResultDTO evaluateQuiz(QuizSubmissionDTO submission) {
@@ -47,6 +57,6 @@ public class QuizService {
 
     // Quiz 엔티티를 QuizDTO로 변환하는 메소드
     private QuizDTO convertToQuizDTO(Quiz quiz) {
-        return new QuizDTO(quiz.getId(), quiz.getQuestion(), quiz.getAnswer(), quiz.getOptions());
+        return new QuizDTO(quiz.getId(), quiz.getQuestion(), quiz.getAnswer(), quiz.getOptions(), quiz.getImage());
     }
 }

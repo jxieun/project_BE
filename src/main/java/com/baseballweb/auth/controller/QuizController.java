@@ -3,6 +3,7 @@ package com.baseballweb.auth.controller;
 import com.baseballweb.auth.dto.QuizDTO;
 import com.baseballweb.auth.dto.QuizSubmissionDTO;
 import com.baseballweb.auth.dto.QuizResultDTO;
+import com.baseballweb.auth.model.Quiz;
 import com.baseballweb.auth.service.QuizService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -32,4 +33,20 @@ public class QuizController {
         QuizResultDTO result = quizService.evaluateQuiz(submission);
         return ResponseEntity.ok(result); // 결과 반환
     }
+
+    // 퀴즈 데이터를 삽입하는 API
+    @PostMapping("/add")
+    public ResponseEntity<Quiz> addQuiz(@RequestBody Quiz quiz) {
+        Quiz savedQuiz = quizService.insertQuizData(quiz); // 데이터를 삽입
+        return ResponseEntity.ok(savedQuiz);
+    }
+
+    //퀴즈 데이터를 반환하는 API
+    @GetMapping("/player")
+    public ResponseEntity<List<QuizDTO>> getPlayerQuizzes() {
+        List<QuizDTO> quizzes = quizService.getQuizzesByType("player");
+        return ResponseEntity.ok(quizzes);
+    }
+
+
 }

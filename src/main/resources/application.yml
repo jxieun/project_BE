@@ -24,7 +24,7 @@ spring:
     cache: false
 
   resources:
-    static-locations: classpath:/static/  # 정적 리소스 경로를 올바르게 설정
+    static-locations: classpath:/static/, classpath:/images/ # 정적 리소스 경로를 올바르게 설정
 
 
 springdoc:
