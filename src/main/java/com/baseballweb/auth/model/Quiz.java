@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import javax.persistence.*;
 
 @Entity
 @Getter
@@ -19,10 +18,10 @@ public class Quiz {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id;      // 퀴즈 ID
 
-    private String type;  // 퀴즈 유형 (인물, 등번호, OX 등)
-    private String question;  // 문제 내용
-    private String answer;  // 정답
-    private String options;  // 선택지 (옵션이 있으면)
+    private String type;  // 퀴즈 유형 (예: 인물, 등번호, OX 등)
+    private String question; // 문제 내용
+    private String answer; // 정답
+    private String options; // 선택지 (옵션이 있으면)
 }

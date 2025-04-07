@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>퀴즈 테스트</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>퀴즈 테스트</h1>
+
+    <!-- 퀴즈 질문 -->
+    <div id="quiz-container">
+        <h2>퀴즈 질문을 불러오는 중...</h2>
+    </div>
+
+    <!-- 점수 확인 -->
+    <div class="result" id="score-result"></div>
+
+    <button id="submit-quiz" style="display:none;">퀴즈 제출</button>
+</div>
+
+<script>
+    const API_BASE_URL = 'http://localhost:8080/api/quiz'; // API 서버 주소
+
+    // 퀴즈 데이터 로드
+    function loadQuiz() {
+        fetch(`${API_BASE_URL}/example`) // 퀴즈 유형 'example'에 해당하는 퀴즈 요청
+            .then(response => response.json())
+            .then(data => {
+                const quizContainer = document.getElementById('quiz-container');
+                const quiz = data[0];  // 첫 번째 퀴즈 데이터 (예시)
+                const quizId = quiz.id; // 받아온 퀴즈의 ID
+
+                // 퀴즈 질문을 HTML로 표시
+                quizContainer.innerHTML = `
+                    <div class="question">
+                        <p>문제: ${quiz.question}</p>
+                        <input type="text" id="user-answer" placeholder="정답을 입력하세요">
+                    </div>
+                `;
+
+                // 퀴즈 제출 버튼을 보여줍니다
+                document.getElementById('submit-quiz').style.display = 'inline-block';
+
+                // 퀴즈 제출 이벤트 리스너 추가
+                document.getElementById('submit-quiz').addEventListener('click', function () {
+                    const answer = document.getElementById('user-answer').value;
+
+                    fetch(`${API_BASE_URL}/submit`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            quizId: quizId, // 실제 퀴즈 ID
+                            answer: answer,
+                            correctAnswer: quiz.answer // 실제 퀴즈의 정답
+                        })
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('score-result').innerText = `정답 여부: ${data.isCorrect}, 점수: ${data.score}`;
+                        })
+                        .catch(error => {
+                            console.error('퀴즈 제출 중 오류가 발생했습니다.', error);
+                        });
+                });
+            })
+            .catch(error => {
+                console.error('퀴즈를 불러오는 중 오류가 발생했습니다.', error);
+            });
+    }
+
+    // 페이지 로드 시 퀴즈 불러오기
+    loadQuiz();
+</script>
+</body>
+</html>

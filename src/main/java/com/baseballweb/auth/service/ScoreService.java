@@ -1,9 +1,12 @@
 package com.baseballweb.auth.service;
 
 import com.baseballweb.auth.dto.ScoreDTO;
+import com.baseballweb.auth.model.Score;
 import com.baseballweb.auth.repository.ScoreRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -13,13 +16,18 @@ public class ScoreService {
 
     // 점수 추가
     public ScoreDTO addScore(ScoreDTO scoreDTO) {
-        // 점수 추가 및 계산 로직
-        scoreRepository.save(scoreDTO);
-        return scoreDTO;
+        Score score = new Score();
+        score.setUserId(scoreDTO.getUserId());
+        score.setQuizId(scoreDTO.getQuizId());
+        score.setScore(scoreDTO.getScore());
+
+        score = scoreRepository.save(score);  // 데이터베이스에 점수 저장
+
+        return new ScoreDTO(score.getUserId(), score.getQuizId(), score.getScore());
     }
 
-    // 팬 랭킹 가져오기
-    public List<FanDTO> getTopFans() {
-        // 팬 랭킹 계산 로직
+    // 팬 랭킹 상위 10명 조회
+    public List<Score> getTopFans() {
+        return scoreRepository.findTop10ByOrderByScoreDesc();  // 상위 10명 점수 조회
     }
 }

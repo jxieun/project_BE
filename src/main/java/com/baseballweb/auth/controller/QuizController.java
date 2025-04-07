@@ -20,14 +20,16 @@ public class QuizController {
     // 퀴즈 데이터 가져오기 (퀴즈 유형별로)
     @GetMapping("/{type}")
     public ResponseEntity<List<QuizDTO>> getQuizzes(@PathVariable String type) {
+        // `QuizService`에서 유형에 맞는 퀴즈를 가져옴
         List<QuizDTO> quizzes = quizService.getQuizzesByType(type);
-        return ResponseEntity.ok(quizzes);
+        return ResponseEntity.ok(quizzes); // 결과 반환
     }
 
     // 퀴즈 제출 (정답 체크 및 점수 계산)
     @PostMapping("/submit")
     public ResponseEntity<QuizResultDTO> submitQuiz(@RequestBody QuizSubmissionDTO submission) {
+        // `QuizService`에서 퀴즈 제출 평가 및 점수 계산
         QuizResultDTO result = quizService.evaluateQuiz(submission);
-        return ResponseEntity.ok(result);
+        return ResponseEntity.ok(result); // 결과 반환
     }
 }
