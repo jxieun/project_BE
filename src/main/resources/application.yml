@@ -6,6 +6,7 @@ spring:
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -22,6 +23,10 @@ spring:
     encoding: UTF-8
     cache: false
 
+  resources:
+    static-locations: classpath:/static/  # 정적 리소스 경로를 올바르게 설정
+
+
 springdoc:
   api-docs:
     path: /v3/api-docs
@@ -31,7 +36,11 @@ springdoc:
 server:
   port: 8080
 
+#logging:
+#  level:
+#    root: DEBUG   # 전체 로그 레벨을 DEBUG로 설정
+
 kakao:
-  client_id: {1329e1826914ddb32b5013284f88db32}
+  client_id: 1329e1826914ddb32b5013284f88db32
   redirect_uri: http://localhost:8080/kakao
 
