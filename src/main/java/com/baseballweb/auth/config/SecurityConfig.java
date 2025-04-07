@@ -37,8 +37,9 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .requestMatchers("/static/**", "/static/kakao_login_medium_narrow.png", "/api/auth/**", "/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**", "/auth.html",
-                        "/css/**", "/js/**", "/images/**","/kakao", "/login/page")
+                .requestMatchers("/**")
+//                .requestMatchers("/static/**", "/static/kakao_login_medium_narrow.png", "/api/auth/**", "/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**", "/auth.html",
+//                        "/css/**", "/js/**", "/images/**","/kakao", "/login/page")
                 .permitAll()  // 인증이 필요 없는 URL 설정
                 .anyRequest().authenticated()  // 나머지 모든 요청은 인증이 필요
                 .and()
