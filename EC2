@@ -1,0 +1,8 @@
+# EC2실행
+ssh -i /Users/rose/Downloads/ball.pem ec2-user@13.125.68.167
+
+# 프로젝트 연결확인
+aws s3 ls
+
+# 데이터목록확인
+aws s3 ls s3://baseball-web-project
