@@ -35,6 +35,15 @@ public class S3Service {
         return amazonS3.getUrl(bucketName, fileName).toString();  // 업로드된 파일 URL 반환
     }
 
+    private File convertMultiPartToFile(MultipartFile file) throws IOException {
+        File convertedFile = new File(file.getOriginalFilename());
+        try (FileOutputStream fos = new FileOutputStream(convertedFile)) {
+            fos.write(file.getBytes());
+        }
+        return convertedFile;
+    }
+}
+
 //    // MultipartFile을 File로 변환하는 메서드
 //    private File convertMultiPartToFile(MultipartFile file) throws IOException {
 //        File convertedFile = new File(file.getOriginalFilename());
@@ -43,4 +52,3 @@ public class S3Service {
 //        }
 //        return convertedFile;
 //    }
-}

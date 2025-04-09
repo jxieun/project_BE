@@ -44,9 +44,8 @@ kakao:
   client_id: 1329e1826914ddb32b5013284f88db32
   redirect_uri: http://localhost:8080/kakao
 
-
 aws:
   s3:
     bucket:
       name: "baseball-web-project"
-  region: "ap-northeast-2"  # AWS 리전 (서울 리전)
+  region: "ap-northeast-2"  # 서울 리전
