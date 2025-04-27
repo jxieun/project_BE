@@ -1,4 +1,4 @@
-package com.baseballweb.auth.model;
+package com.baseballweb.auth.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+//JPA 엔티티로, 데이터베이스의 quiz 테이블과 매핑되어 퀴즈 정보를 저장하고 관리
 
 @Entity
 @Getter

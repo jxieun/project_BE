@@ -1,6 +1,6 @@
 package com.baseballweb.auth.controller;
 
-import com.baseballweb.auth.model.Diary;
+import com.baseballweb.auth.domain.Diary;
 import com.baseballweb.auth.service.DiaryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

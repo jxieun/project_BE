@@ -1,6 +1,6 @@
 package com.baseballweb.auth.config;
 
-import com.baseballweb.auth.model.Quiz;
+import com.baseballweb.auth.domain.Quiz;
 import com.baseballweb.auth.repository.QuizRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;

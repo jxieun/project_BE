@@ -1,6 +1,6 @@
 package com.baseballweb.auth.service;
 
-import com.baseballweb.auth.model.Diary;
+import com.baseballweb.auth.domain.Diary;
 import com.baseballweb.auth.repository.DiaryRepository;
 //import io.jsonwebtoken.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;

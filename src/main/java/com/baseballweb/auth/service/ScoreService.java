@@ -1,7 +1,7 @@
 package com.baseballweb.auth.service;
 
 import com.baseballweb.auth.dto.ScoreDTO;
-import com.baseballweb.auth.model.Score;
+import com.baseballweb.auth.domain.Score;
 import com.baseballweb.auth.repository.ScoreRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

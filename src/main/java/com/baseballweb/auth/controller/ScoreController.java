@@ -1,7 +1,7 @@
 package com.baseballweb.auth.controller;
 
 import com.baseballweb.auth.dto.ScoreDTO;
-import com.baseballweb.auth.model.Score;
+import com.baseballweb.auth.domain.Score;
 import com.baseballweb.auth.service.ScoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.baseballweb.auth.model;
+package com.baseballweb.auth.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

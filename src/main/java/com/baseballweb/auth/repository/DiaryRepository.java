@@ -1,6 +1,6 @@
 package com.baseballweb.auth.repository;
 
-import com.baseballweb.auth.model.Diary;
+import com.baseballweb.auth.domain.Diary;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDate;

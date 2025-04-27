@@ -3,7 +3,7 @@ package com.baseballweb.auth.controller;
 import com.baseballweb.auth.dto.QuizDTO;
 import com.baseballweb.auth.dto.QuizSubmissionDTO;
 import com.baseballweb.auth.dto.QuizResultDTO;
-import com.baseballweb.auth.model.Quiz;
+import com.baseballweb.auth.domain.Quiz;
 import com.baseballweb.auth.service.QuizService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

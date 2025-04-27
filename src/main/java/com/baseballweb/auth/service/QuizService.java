@@ -4,7 +4,7 @@ import com.baseballweb.auth.dto.QuizDTO;
 import com.baseballweb.auth.dto.QuizSubmissionDTO;
 import com.baseballweb.auth.dto.QuizResultDTO;
 import com.baseballweb.auth.repository.QuizRepository;
-import com.baseballweb.auth.model.Quiz; // Quiz 엔티티 추가
+import com.baseballweb.auth.domain.Quiz; // Quiz 엔티티 추가
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
