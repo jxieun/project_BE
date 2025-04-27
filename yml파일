@@ -1,6 +1,3 @@
-실행 시에 
-application.yml파일에 aws 이렇게 변경후 빌드해야 함
-
 aws:
   access:
     key:
