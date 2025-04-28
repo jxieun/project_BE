@@ -1,52 +1,77 @@
 package com.baseballweb.auth.controller;
 
-import com.baseballweb.auth.dto.QuizDTO;
-import com.baseballweb.auth.dto.QuizSubmissionDTO;
-import com.baseballweb.auth.dto.QuizResultDTO;
-import com.baseballweb.auth.domain.Quiz;
-import com.baseballweb.auth.service.QuizService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
+import com.baseballweb.auth.dto.quiz.CheerSongQuizDTO;
+import com.baseballweb.auth.dto.quiz.KboTermQuizDTO;
+import com.baseballweb.auth.dto.quiz.PlayerNumberQuizDTO;
+import com.baseballweb.auth.dto.quiz.PlayerQuizDTO;
+import com.baseballweb.auth.service.quiz.CheerSongQuizService;
+import com.baseballweb.auth.service.quiz.KboTermQuizService;
+import com.baseballweb.auth.service.quiz.PlayerNumberQuizService;
+import com.baseballweb.auth.service.quiz.PlayerQuizService;
+//import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/quiz")
-@RequiredArgsConstructor
+@RequestMapping("/api/quizzes")
 public class QuizController {
 
-    private final QuizService quizService;
+    @Autowired
+    private PlayerQuizService playerQuizService;
+    @Autowired
+    private PlayerNumberQuizService playerNumberQuizService;
+    @Autowired
+    private KboTermQuizService kboTermQuizService;
+    @Autowired
+    private CheerSongQuizService cheerSongQuizService;
 
-    // 퀴즈 데이터 가져오기 (퀴즈 유형별로)
-    @GetMapping("/{type}")
-    public ResponseEntity<List<QuizDTO>> getQuizzes(@PathVariable String type) {
-        // `QuizService`에서 유형에 맞는 퀴즈를 가져옴
-        List<QuizDTO> quizzes = quizService.getQuizzesByType(type);
-        return ResponseEntity.ok(quizzes); // 결과 반환
-    }
-
-    // 퀴즈 제출 (정답 체크 및 점수 계산)
-    @PostMapping("/submit")
-    public ResponseEntity<QuizResultDTO> submitQuiz(@RequestBody QuizSubmissionDTO submission) {
-        // `QuizService`에서 퀴즈 제출 평가 및 점수 계산
-        QuizResultDTO result = quizService.evaluateQuiz(submission);
-        return ResponseEntity.ok(result); // 결과 반환
-    }
-
-    // 퀴즈 데이터를 삽입하는 API
-    @PostMapping("/add")
-    public ResponseEntity<Quiz> addQuiz(@RequestBody Quiz quiz) {
-        Quiz savedQuiz = quizService.insertQuizData(quiz); // 데이터를 삽입
-        return ResponseEntity.ok(savedQuiz);
-    }
-
-    //퀴즈 데이터를 반환하는 API
+    // 인물 퀴즈 가져오기 (DTO 반환)
     @GetMapping("/player")
-    public ResponseEntity<List<QuizDTO>> getPlayerQuizzes() {
-        List<QuizDTO> quizzes = quizService.getQuizzesByType("player");
-        return ResponseEntity.ok(quizzes);
+    public List<PlayerQuizDTO> getPlayerQuizzes() {
+        return playerQuizService.getAllPlayerQuizzes();
     }
 
+    // 등번호 퀴즈 가져오기 (DTO 반환)
+    @GetMapping("/player/number")
+    public List<PlayerNumberQuizDTO> getPlayerNumberQuizzes() {
+        return playerNumberQuizService.getAllPlayerNumberQuizzes();
+    }
 
+    // 롤 용어 퀴즈 가져오기 (DTO 반환)
+    @GetMapping("/kbo-term")
+    public List<KboTermQuizDTO> getKboTermQuizzes() {
+        return kboTermQuizService.getAllKboTermQuizzes();
+    }
+
+    // 응원가 퀴즈 가져오기 (DTO 반환)
+    @GetMapping("/cheer-song")
+    public List<CheerSongQuizDTO> getCheerSongQuizzes() {
+        return cheerSongQuizService.getAllCheerSongQuizzes();
+    }
+
+    // 인물 퀴즈 추가하기 (DTO로 받아서 처리)
+    @PostMapping("/add/player")
+    public void addPlayerQuiz(@RequestBody PlayerQuizDTO playerQuizDTO) {
+        playerQuizService.addPlayerQuiz(playerQuizDTO);
+    }
+
+    // KBO 용어 퀴즈 추가하기 (DTO로 받아서 처리)
+    @PostMapping("/add/kbo-term")
+    public void addKboTermQuiz(@RequestBody KboTermQuizDTO kboTermQuizDTO) {
+        kboTermQuizService.addKboTermQuiz(kboTermQuizDTO);
+    }
+
+    // 응원가 퀴즈 추가하기 (DTO로 받아서 처리)
+    @PostMapping("/add/cheer-song")
+    public void addCheerSongQuiz(@RequestBody CheerSongQuizDTO cheerSongQuizDTO) {
+        cheerSongQuizService.addCheerSongQuiz(cheerSongQuizDTO);
+    }
+
+    // 등번호 퀴즈 추가하기 (DTO로 받아서 처리)
+    @PostMapping("/add/player/number")
+    public void addPlayerNumberQuiz(@RequestBody PlayerNumberQuizDTO playerNumberQuizDTO) {
+        playerNumberQuizService.addPlayerNumberQuiz(playerNumberQuizDTO);
+    }
 }
