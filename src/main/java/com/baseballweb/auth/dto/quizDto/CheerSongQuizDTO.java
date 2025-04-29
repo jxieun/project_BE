@@ -4,13 +4,11 @@ public class CheerSongQuizDTO {
     private String songUrl;
     private String teamName;
 
-    // 생성자
     public CheerSongQuizDTO(String songUrl, String teamName) {
         this.songUrl = songUrl;
         this.teamName = teamName;
     }
 
-    // Getters and Setters
     public String getSongUrl() {
         return songUrl;
     }

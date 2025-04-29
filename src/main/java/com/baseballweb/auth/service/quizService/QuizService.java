@@ -20,7 +20,7 @@ public class QuizService {
 
     // 퀴즈 정답 평가 및 점수 계산
     public QuizResultDTO evaluateQuiz(QuizSubmissionDTO submission) {
-        // 퀴즈 ID로 퀴즈 데이터를 조회하여 정답을 가져옵니다.
+        // 퀴즈 ID로 퀴즈 데이터를 조회하여 정답을 가져옴
         PlayerQuiz playerQuiz = playerQuizRepository.findById(submission.getQuizId())
                 .orElseThrow(() -> new RuntimeException("Quiz not found"));
 

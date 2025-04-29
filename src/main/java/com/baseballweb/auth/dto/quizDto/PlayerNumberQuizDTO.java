@@ -4,13 +4,11 @@ public class PlayerNumberQuizDTO {
     private String number;
     private String imageUrl;
 
-    // 생성자
     public PlayerNumberQuizDTO(String number, String imageUrl) {
         this.number = number;
         this.imageUrl = imageUrl;
     }
 
-    // Getters and Setters
     public String getNumber() {
         return number;
     }

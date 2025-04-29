@@ -5,14 +5,12 @@ public class PlayerQuizDTO {
     private String name;
     private String imageUrl;
 
-    // 생성자
     public PlayerQuizDTO(Long id, String name, String imageUrl) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
     }
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
