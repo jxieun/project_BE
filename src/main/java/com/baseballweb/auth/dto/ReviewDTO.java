@@ -1,15 +1,15 @@
 package com.baseballweb.auth.dto;
 
 public class ReviewDTO {
-    private int rating;  // 별점
+    private double rating;  // 별점
     private String content;  // 리뷰 내용
     private String imageUrl;  // 사진 URL
 
-    public int getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 

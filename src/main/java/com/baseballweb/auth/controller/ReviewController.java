@@ -6,6 +6,7 @@ import com.baseballweb.auth.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,8 +20,12 @@ public class ReviewController {
 
     // 리뷰 작성 API
     @PostMapping("/add/{stadiumId}")
-    public ResponseEntity<ReviewDTO> addReview(@PathVariable Long stadiumId, @RequestBody ReviewDTO reviewDTO) {
-        Review review = reviewService.addReview(stadiumId, reviewDTO.getRating(), reviewDTO.getContent(), reviewDTO.getImageUrl());
+    public ResponseEntity<ReviewDTO> addReview(@PathVariable Long stadiumId,
+                                               @RequestParam double rating,   // 별점
+                                               @RequestParam String content,   // 리뷰 내용
+                                               @RequestParam(required = false) MultipartFile image) {  // 리뷰 이미지 (optional)
+        // 이미지 파일도 함께 처리
+        Review review = reviewService.addReview(stadiumId, rating, content, image);
 
         // Review를 ReviewDTO로 변환하여 반환
         ReviewDTO responseDTO = new ReviewDTO();
