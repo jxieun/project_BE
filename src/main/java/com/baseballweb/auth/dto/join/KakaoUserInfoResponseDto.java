@@ -1,14 +1,9 @@
-package com.baseballweb.auth.dto;
+package com.baseballweb.auth.dto.join;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.netty.handler.codec.http.HttpHeaderValues;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 
 import java.util.Date;
 import java.util.HashMap;

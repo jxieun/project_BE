@@ -1,4 +1,4 @@
-package com.baseballweb.auth.dto;
+package com.baseballweb.auth.dto.join;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

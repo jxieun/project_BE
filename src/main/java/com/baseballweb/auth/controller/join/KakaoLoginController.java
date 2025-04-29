@@ -1,15 +1,8 @@
-package com.baseballweb.auth.controller;
+package com.baseballweb.auth.controller.join;
 
-import com.baseballweb.auth.dto.KakaoUserInfoResponseDto;
-import com.baseballweb.auth.service.KakaoService;
-import io.jsonwebtoken.io.IOException;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;

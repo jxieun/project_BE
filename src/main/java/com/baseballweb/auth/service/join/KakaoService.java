@@ -1,7 +1,7 @@
-package com.baseballweb.auth.service;
+package com.baseballweb.auth.service.join;
 
-import com.baseballweb.auth.dto.KakaoTokenResponseDto;
-import com.baseballweb.auth.dto.KakaoUserInfoResponseDto;
+import com.baseballweb.auth.dto.join.KakaoTokenResponseDto;
+import com.baseballweb.auth.dto.join.KakaoUserInfoResponseDto;
 import io.netty.handler.codec.http.HttpHeaderValues;
 import lombok.RequiredArgsConstructor;
 
