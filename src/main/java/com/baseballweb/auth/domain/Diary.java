@@ -13,7 +13,7 @@ public class Diary {
 
     //@Column(name = "game_date")  // game_date 컬럼을 명시적으로 매핑
     private LocalDate gameDate;  // 경기 날짜 (yyyy-MM-dd)
-    private String opponentTeam;  // 상대팀
+    //private String opponentTeam;  // 상대팀
     private String diaryContent;  // 일기 내용
     private String imageUrl;  // 이미지 URL (S3 저장 링크)
 
@@ -22,9 +22,9 @@ public class Diary {
     }
 
     // 생성자
-    public Diary(LocalDate gameDate, String opponentTeam, String diaryContent, String imageUrl) {
+    public Diary(LocalDate gameDate, String diaryContent, String imageUrl) {
         this.gameDate = gameDate;
-        this.opponentTeam = opponentTeam;
+        //this.opponentTeam = opponentTeam;
         this.diaryContent = diaryContent;
         this.imageUrl = imageUrl;
     }
@@ -46,13 +46,13 @@ public class Diary {
         this.gameDate = gameDate;
     }
 
-    public String getOpponentTeam() {
-        return opponentTeam;
-    }
-
-    public void setOpponentTeam(String opponentTeam) {
-        this.opponentTeam = opponentTeam;
-    }
+//    public String getOpponentTeam() {
+//        return opponentTeam;
+//    }
+//
+//    public void setOpponentTeam(String opponentTeam) {
+//        this.opponentTeam = opponentTeam;
+//    }
 
     public String getDiaryContent() {
         return diaryContent;

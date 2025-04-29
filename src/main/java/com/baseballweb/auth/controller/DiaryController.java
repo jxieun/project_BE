@@ -23,7 +23,6 @@ public class DiaryController {
     // 일기 추가
     @PostMapping("/add")
     public Diary addDiary(@RequestParam String gameDate,
-                          @RequestParam String opponentTeam,
                           @RequestParam String diaryContent,
                           @RequestParam(required = false) MultipartFile image) {
 
@@ -38,7 +37,7 @@ public class DiaryController {
             imageUrl = diaryService.uploadImage(image);  // 이미지 업로드
         }
 
-        Diary diary = new Diary(gameDateParsed, opponentTeam, diaryContent, imageUrl);
+        Diary diary = new Diary(gameDateParsed, diaryContent, imageUrl);
 
         // DiaryService를 통해 DB에 저장
         return diaryService.saveDiary(diary);
