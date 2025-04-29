@@ -1,5 +1,5 @@
 
-package com.baseballweb.auth.dto.join;
+package com.baseballweb.auth.dto.joinDto;
 
 import lombok.*;
 

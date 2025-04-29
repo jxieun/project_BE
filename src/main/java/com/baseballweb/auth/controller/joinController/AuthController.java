@@ -1,9 +1,9 @@
 
-package com.baseballweb.auth.controller.join;
+package com.baseballweb.auth.controller.joinController;
 
-import com.baseballweb.auth.dto.join.LoginRequest;
-import com.baseballweb.auth.dto.join.SignupRequest;
-import com.baseballweb.auth.service.join.AuthService;
+import com.baseballweb.auth.dto.joinDto.LoginRequest;
+import com.baseballweb.auth.dto.joinDto.SignupRequest;
+import com.baseballweb.auth.service.joinService.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

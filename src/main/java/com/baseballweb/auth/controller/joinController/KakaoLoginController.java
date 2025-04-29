@@ -1,4 +1,4 @@
-package com.baseballweb.auth.controller.join;
+package com.baseballweb.auth.controller.joinController;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;

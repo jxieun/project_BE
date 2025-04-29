@@ -1,9 +1,9 @@
 
-package com.baseballweb.auth.service.join;
+package com.baseballweb.auth.service.joinService;
 
 import com.baseballweb.auth.domain.User;
-import com.baseballweb.auth.dto.join.LoginRequest;
-import com.baseballweb.auth.dto.join.SignupRequest;
+import com.baseballweb.auth.dto.joinDto.LoginRequest;
+import com.baseballweb.auth.dto.joinDto.SignupRequest;
 import com.baseballweb.auth.jwt.JwtUtil;
 import com.baseballweb.auth.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
