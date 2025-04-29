@@ -1,12 +1,12 @@
 package com.baseballweb.auth.controller;
 
+import com.baseballweb.auth.dto.QuizResultDTO;
+import com.baseballweb.auth.dto.QuizSubmissionDTO;
 import com.baseballweb.auth.dto.quiz.PlayerQuizDTO;
 import com.baseballweb.auth.service.quiz.PlayerQuizService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,4 +21,5 @@ public class PlayerQuizController {
     public List<PlayerQuizDTO> getQuizOptions(@RequestParam Long correctPlayerId) {
         return playerQuizService.getQuizOptions(correctPlayerId);  // 4개 선택지 반환
     }
+
 }

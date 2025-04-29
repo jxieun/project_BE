@@ -6,17 +6,37 @@ import lombok.Setter;
 @Getter
 @Setter
 public class QuizSubmissionDTO {
+//    private Long quizId;        // 퀴즈의 고유 ID
+//    private String answer;      // 사용자가 제출한 답안
+//    private String correctAnswer; // 정답
+
     private Long quizId;        // 퀴즈의 고유 ID
     private String answer;      // 사용자가 제출한 답안
-    private String correctAnswer; // 정답
+    private Long userId;        // 사용자의 ID (점수를 저장하기 위해 필요)
 
-    public QuizSubmissionDTO() {
-        // 기본 생성자 (필요에 따라 수정)
+
+    public Long getQuizId() {
+        return quizId;
     }
 
-    public QuizSubmissionDTO(Long quizId, String answer, String correctAnswer) {
+    public void setQuizId(Long quizId) {
         this.quizId = quizId;
-        this.answer = answer;
-        this.correctAnswer = correctAnswer;
     }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
 }

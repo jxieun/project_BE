@@ -62,6 +62,7 @@ public class PlayerQuizService {
                 .map(player -> new PlayerQuizDTO(player.getId(), player.getName(), player.getImageUrl()))
                 .collect(Collectors.toList());
     }
+
 }
 
 // 제공되는 데이터 예시
