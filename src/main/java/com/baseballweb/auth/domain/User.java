@@ -20,6 +20,4 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    //private String nickname;
-    //private String provider; // local or kakao
 }

@@ -22,6 +22,7 @@ public class SecurityConfig {
 
     private final JwtFilter jwtFilter;
 
+    //비밀번호암호화
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
