@@ -1,0 +1,30 @@
+# Java
+*.class
+*.log
+*.war
+*.jar
+
+# Gradle
+.gradle/
+build/
+out/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Spring Boot devtools
+.spring-boot-devtools.properties
+
+# Environment / Secrets
+.env
+application-prod.yml
+application-*.yml
