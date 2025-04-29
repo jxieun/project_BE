@@ -1,8 +1,8 @@
-package com.baseballweb.auth.service.quiz;
+package com.baseballweb.auth.service.quizService;
 
-import com.baseballweb.auth.domain.KboTermQuiz;
-import com.baseballweb.auth.dto.quiz.KboTermQuizDTO;
-import com.baseballweb.auth.repository.KboTermQuizRepository;
+import com.baseballweb.auth.domain.quizDomain.KboTermQuiz;
+import com.baseballweb.auth.dto.quizDto.KboTermQuizDTO;
+import com.baseballweb.auth.repository.quizRepository.KboTermQuizRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

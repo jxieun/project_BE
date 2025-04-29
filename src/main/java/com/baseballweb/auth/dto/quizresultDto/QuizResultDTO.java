@@ -1,4 +1,4 @@
-package com.baseballweb.auth.dto;
+package com.baseballweb.auth.dto.quizresultDto;
 
 public class QuizResultDTO {
     private boolean isCorrect;  // 정답 여부

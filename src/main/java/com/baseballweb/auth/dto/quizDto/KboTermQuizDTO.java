@@ -1,4 +1,4 @@
-package com.baseballweb.auth.dto.quiz;
+package com.baseballweb.auth.dto.quizDto;
 
 public class KboTermQuizDTO {
     private String term;

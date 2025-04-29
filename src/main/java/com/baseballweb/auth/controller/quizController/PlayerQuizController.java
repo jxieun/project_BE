@@ -1,11 +1,8 @@
-package com.baseballweb.auth.controller;
+package com.baseballweb.auth.controller.quizController;
 
-import com.baseballweb.auth.dto.QuizResultDTO;
-import com.baseballweb.auth.dto.QuizSubmissionDTO;
-import com.baseballweb.auth.dto.quiz.PlayerQuizDTO;
-import com.baseballweb.auth.service.quiz.PlayerQuizService;
+import com.baseballweb.auth.dto.quizDto.PlayerQuizDTO;
+import com.baseballweb.auth.service.quizService.PlayerQuizService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

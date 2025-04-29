@@ -1,16 +1,13 @@
-package com.baseballweb.auth.service;
+package com.baseballweb.auth.service.quizService;
 
-import com.baseballweb.auth.domain.PlayerQuiz;
-import com.baseballweb.auth.dto.QuizSubmissionDTO;
-import com.baseballweb.auth.dto.QuizResultDTO;
-import com.baseballweb.auth.dto.ScoreDTO;
-import com.baseballweb.auth.repository.PlayerQuizRepository;
+import com.baseballweb.auth.domain.quizDomain.PlayerQuiz;
+import com.baseballweb.auth.dto.quizresultDto.QuizSubmissionDTO;
+import com.baseballweb.auth.dto.quizresultDto.QuizResultDTO;
+import com.baseballweb.auth.dto.quizresultDto.ScoreDTO;
+import com.baseballweb.auth.repository.quizRepository.PlayerQuizRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor

@@ -1,8 +1,8 @@
-package com.baseballweb.auth.service.quiz;
+package com.baseballweb.auth.service.quizService;
 
-import com.baseballweb.auth.domain.CheerSongQuiz;
-import com.baseballweb.auth.dto.quiz.CheerSongQuizDTO;
-import com.baseballweb.auth.repository.CheerSongQuizRepository;
+import com.baseballweb.auth.domain.quizDomain.CheerSongQuiz;
+import com.baseballweb.auth.dto.quizDto.CheerSongQuizDTO;
+import com.baseballweb.auth.repository.quizRepository.CheerSongQuizRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

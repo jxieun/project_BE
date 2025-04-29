@@ -1,8 +1,8 @@
-package com.baseballweb.auth.service.quiz;
+package com.baseballweb.auth.service.quizService;
 
-import com.baseballweb.auth.domain.PlayerNumberQuiz;
-import com.baseballweb.auth.dto.quiz.PlayerNumberQuizDTO;
-import com.baseballweb.auth.repository.PlayerNumberQuizRepository;
+import com.baseballweb.auth.domain.quizDomain.PlayerNumberQuiz;
+import com.baseballweb.auth.dto.quizDto.PlayerNumberQuizDTO;
+import com.baseballweb.auth.repository.quizRepository.PlayerNumberQuizRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

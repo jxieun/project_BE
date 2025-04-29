@@ -1,4 +1,4 @@
-package com.baseballweb.auth.dto;
+package com.baseballweb.auth.dto.quizresultDto;
 
 import lombok.Getter;
 import lombok.Setter;

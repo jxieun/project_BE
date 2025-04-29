@@ -1,6 +1,6 @@
-package com.baseballweb.auth.repository;
+package com.baseballweb.auth.repository.quizRepository;
 
-import com.baseballweb.auth.domain.Score;
+import com.baseballweb.auth.domain.quizDomain.Score;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

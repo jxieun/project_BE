@@ -1,7 +1,7 @@
-package com.baseballweb.auth.controller;
+package com.baseballweb.auth.controller.quizController;
 
-import com.baseballweb.auth.dto.quiz.CheerSongQuizDTO;
-import com.baseballweb.auth.service.quiz.CheerSongQuizService;
+import com.baseballweb.auth.dto.quizDto.CheerSongQuizDTO;
+import com.baseballweb.auth.service.quizService.CheerSongQuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

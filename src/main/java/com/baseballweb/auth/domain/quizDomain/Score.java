@@ -1,4 +1,4 @@
-package com.baseballweb.auth.domain;
+package com.baseballweb.auth.domain.quizDomain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

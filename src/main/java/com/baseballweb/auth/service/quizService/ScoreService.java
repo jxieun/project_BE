@@ -1,8 +1,8 @@
-package com.baseballweb.auth.service;
+package com.baseballweb.auth.service.quizService;
 
-import com.baseballweb.auth.dto.ScoreDTO;
-import com.baseballweb.auth.domain.Score;
-import com.baseballweb.auth.repository.ScoreRepository;
+import com.baseballweb.auth.dto.quizresultDto.ScoreDTO;
+import com.baseballweb.auth.domain.quizDomain.Score;
+import com.baseballweb.auth.repository.quizRepository.ScoreRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

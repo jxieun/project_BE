@@ -1,19 +1,16 @@
-package com.baseballweb.auth.controller;
+package com.baseballweb.auth.controller.quizController;
 
-import com.baseballweb.auth.dto.QuizResultDTO;
-import com.baseballweb.auth.dto.QuizSubmissionDTO;
-import com.baseballweb.auth.dto.quiz.CheerSongQuizDTO;
-import com.baseballweb.auth.dto.quiz.KboTermQuizDTO;
-import com.baseballweb.auth.dto.quiz.PlayerNumberQuizDTO;
-import com.baseballweb.auth.dto.quiz.PlayerQuizDTO;
-import com.baseballweb.auth.service.QuizService;
-import com.baseballweb.auth.service.quiz.CheerSongQuizService;
-import com.baseballweb.auth.service.quiz.KboTermQuizService;
-import com.baseballweb.auth.service.quiz.PlayerNumberQuizService;
-import com.baseballweb.auth.service.quiz.PlayerQuizService;
+import com.baseballweb.auth.dto.quizDto.CheerSongQuizDTO;
+import com.baseballweb.auth.dto.quizDto.KboTermQuizDTO;
+import com.baseballweb.auth.dto.quizDto.PlayerNumberQuizDTO;
+import com.baseballweb.auth.dto.quizDto.PlayerQuizDTO;
+import com.baseballweb.auth.service.quizService.QuizService;
+import com.baseballweb.auth.service.quizService.CheerSongQuizService;
+import com.baseballweb.auth.service.quizService.KboTermQuizService;
+import com.baseballweb.auth.service.quizService.PlayerNumberQuizService;
+import com.baseballweb.auth.service.quizService.PlayerQuizService;
 //import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,11 +1,10 @@
-package com.baseballweb.auth.controller;
+package com.baseballweb.auth.controller.quizController;
 
-import com.baseballweb.auth.dto.QuizResultDTO;
-import com.baseballweb.auth.dto.QuizSubmissionDTO;
-import com.baseballweb.auth.dto.ScoreDTO;
-import com.baseballweb.auth.domain.Score;
-import com.baseballweb.auth.service.QuizService;
-import com.baseballweb.auth.service.ScoreService;
+import com.baseballweb.auth.dto.quizresultDto.QuizResultDTO;
+import com.baseballweb.auth.dto.quizresultDto.QuizSubmissionDTO;
+import com.baseballweb.auth.domain.quizDomain.Score;
+import com.baseballweb.auth.service.quizService.QuizService;
+import com.baseballweb.auth.service.quizService.ScoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
