@@ -1,4 +1,4 @@
-package com.baseballweb.auth.domain;
+package com.baseballweb.auth.domain.guideDomain;
 
 import jakarta.persistence.*;
 

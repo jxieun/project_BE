@@ -1,8 +1,8 @@
-package com.baseballweb.auth.controller;
+package com.baseballweb.auth.controller.guideController;
 
-import com.baseballweb.auth.domain.Review;
-import com.baseballweb.auth.dto.ReviewDTO;
-import com.baseballweb.auth.service.ReviewService;
+import com.baseballweb.auth.domain.guideDomain.Review;
+import com.baseballweb.auth.dto.guideDto.ReviewDTO;
+import com.baseballweb.auth.service.guideService.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

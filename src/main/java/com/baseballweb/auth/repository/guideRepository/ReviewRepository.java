@@ -1,6 +1,6 @@
-package com.baseballweb.auth.repository;
+package com.baseballweb.auth.repository.guideRepository;
 
-import com.baseballweb.auth.domain.Review;
+import com.baseballweb.auth.domain.guideDomain.Review;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

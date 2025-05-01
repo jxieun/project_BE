@@ -1,4 +1,4 @@
-package com.baseballweb.auth.dto;
+package com.baseballweb.auth.dto.guideDto;
 
 public class ReviewDTO {
     private double rating;  // 별점

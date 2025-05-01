@@ -1,9 +1,10 @@
-package com.baseballweb.auth.service;
+package com.baseballweb.auth.service.guideService;
 
-import com.baseballweb.auth.domain.Review;
-import com.baseballweb.auth.domain.Stadium;
-import com.baseballweb.auth.repository.ReviewRepository;
-import com.baseballweb.auth.repository.StadiumRepository;
+import com.baseballweb.auth.domain.guideDomain.Review;
+import com.baseballweb.auth.domain.guideDomain.Stadium;
+import com.baseballweb.auth.repository.guideRepository.ReviewRepository;
+import com.baseballweb.auth.repository.guideRepository.StadiumRepository;
+import com.baseballweb.auth.service.S3Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
