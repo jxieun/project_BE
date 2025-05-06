@@ -13,7 +13,7 @@ public class PlayerStatistics {
     private String playerName;
     private String teamName;
     private String position;
-    private double battingAvg;
+    private double battingAvg; //타율
 
     public Long getId() {
         return id;

@@ -41,7 +41,7 @@ public class KboCrawlService {
     }
 
     public List<String> getTeamRankings() throws IOException {
-        String url = "https://www.koreabaseball.com/TeamRank/TeamRank.aspx";
+        String url = "https://www.koreabaseball.com/Record/TeamRank/TeamRankDaily.aspx";
         Document doc = Jsoup.connect(url).get();
 
         Elements rows = doc.select("table tbody tr");
@@ -73,7 +73,7 @@ public class KboCrawlService {
     }
 
     public List<String> getPlayerStatistics() throws IOException {
-        String url = "https://www.koreabaseball.com/Player/PlayerList.aspx";
+        String url = "https://www.koreabaseball.com/Record/Player/HitterBasic/Basic1.aspx?sort=HRA_RT";
         Document doc = Jsoup.connect(url).get();
 
         Elements players = doc.select("table.player-statistics tbody tr");

@@ -1,11 +1,11 @@
 package com.baseballweb.auth.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "kbo_team_ranking")
 public class KboTeamRanking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -10,6 +10,7 @@ import java.util.List;
 
 @Service
 public class KboTeamRankingService {
+
     private final KboTeamRankingRepository kboTeamRankingRepository;
 
     @Autowired

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBO 데이터</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #team-rankings {
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        select {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>KBO 데이터</h1>
+
+    <!-- 팀 순위 -->
+    <div id="team-rankings" class="section">
+        <h2>팀 순위</h2>
+        <ul id="rankings-list"></ul>
+    </div>
+</div>
+
+<script>
+    // 팀 순위 데이터 로드 함수
+    function loadTeamRankings() {
+        fetch('http://localhost:8080/api/kbo/team-rankings')
+            .then(response => response.json())
+            .then(data => {
+                const rankingsList = document.getElementById('rankings-list');
+                rankingsList.innerHTML = '';
+                data.forEach(ranking => {
+                    const li = document.createElement('li');
+                    li.textContent = `${ranking.rank}. ${ranking.teamName}`;
+                    rankingsList.appendChild(li);
+                });
+            })
+            .catch(error => console.error('팀 순위 로드 오류:', error));
+    }
+
+    // 페이지 로드 시 데이터 로드
+    window.onload = function() {
+        loadTeamRankings();
+    };
+</script>
+
+</body>
+</html>
