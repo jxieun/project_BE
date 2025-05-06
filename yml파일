@@ -1,0 +1,11 @@
+aws:
+  access:
+    key:
+      id: "AKIA2CL5YXQMCFL7DYEQ"  # AWS Access Key ID
+  secret:
+    access:
+      key: "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"  # AWS Secret Access Key
+  s3:
+    bucket:
+      name: "baseball-web-project"  # S3 버킷 이름
+  region: "ap-northeast-2"  # AWS 리전 (서울 리전)

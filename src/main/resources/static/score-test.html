@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>점수 제출 및 팬 랭킹 테스트</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>점수 제출</h1>
+    <div>
+        <input id="userId" placeholder="사용자 ID" type="number"><br>
+        <input id="nickname" placeholder="닉네임"><br>
+        <input id="score" placeholder="점수" type="number"><br>
+        <button onclick="submitScore()">점수 제출</button>
+    </div>
+
+    <div class="result" id="score-result"></div>
+
+    <h1>팬 랭킹</h1>
+    <button onclick="getFanRankings()">팬 랭킹 확인</button>
+    <div id="fan-rankings"></div>
+</div>
+
+<script>
+    const API_BASE_URL = 'http://localhost:8080/api/score'; // API 서버 주소
+
+    // 점수 제출 함수
+    function submitScore() {
+        const userId = document.getElementById('userId').value;
+        const nickname = document.getElementById('nickname').value;
+        const score = document.getElementById('score').value;
+
+        fetch(`${API_BASE_URL}/submit`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                userId: userId,
+                nickname: nickname,
+                score: score
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('score-result').innerText = `점수 제출 완료: ${data.nickname}의 점수 ${data.score}`;
+            })
+            .catch(error => {
+                console.error('점수 제출 중 오류가 발생했습니다.', error);
+            });
+    }
+
+    // 팬 랭킹 조회 함수
+    function getFanRankings() {
+        fetch(`${API_BASE_URL}/ranking`)
+            .then(response => response.json())
+            .then(data => {
+                const rankingsContainer = document.getElementById('fan-rankings');
+                rankingsContainer.innerHTML = '<ul>';
+                data.forEach(ranking => {
+                    rankingsContainer.innerHTML += `<li>${ranking.nickname}: ${ranking.score}점</li>`;
+                });
+                rankingsContainer.innerHTML += '</ul>';
+            })
+            .catch(error => {
+                console.error('팬 랭킹을 불러오는 중 오류가 발생했습니다.', error);
+            });
+    }
+</script>
+</body>
+</html>

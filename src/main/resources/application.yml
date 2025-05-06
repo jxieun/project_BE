@@ -1,0 +1,54 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/baseball_db?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+file:
+  upload-dir: /path/to/save/images
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+
+  resources:
+    static-locations: classpath:/static/  # 정적 리소스 경로를 올바르게 설정
+
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+server:
+  port: 8080
+
+#logging:
+#  level:
+#    root: DEBUG   # 전체 로그 레벨을 DEBUG로 설정
+
+kakao:
+  client_id: 1329e1826914ddb32b5013284f88db32
+  redirect_uri: http://localhost:8080/kakao
+
+aws:
+  s3:
+    bucket:
+      name: "baseball-web-project"
+  region: "ap-northeast-2"  # 서울 리전

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경기 일기 작성</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #calendar {
+            margin-bottom: 20px;
+        }
+
+        .diary-entry {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        #diary-form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>경기 일기 작성</h1>
+
+    <!-- 캘린더 -->
+    <input type="date" id="date-picker" onchange="loadDiaryData()">
+
+    <!-- 일기 입력 폼 -->
+    <div id="diary-form" style="display: none;">
+        <h2>일기 작성</h2>
+        <textarea id="diary-content" placeholder="경기 일기를 작성하세요." rows="5" style="width: 100%;"></textarea><br>
+        <input type="file" id="diary-image"><br>
+        <button onclick="submitDiary()">일기 제출</button>
+    </div>
+
+    <!-- 작성한 일기 표시 -->
+    <div id="diary-display" class="diary-entry" style="display: none;">
+        <h2>작성된 일기</h2>
+        <p id="display-date"></p>
+        <p id="display-content"></p>
+        <img id="display-image" style="width: 100%; max-width: 300px;" src="imageUrl">
+<!--        <img id="display-image" style="max-width: 100px;" />-->
+    </div>
+</div>
+
+<script>
+    const apiUrl = "http://localhost:8080/api/diary"; // 백엔드 API
+
+    // 날짜 선택 시 해당 일기의 데이터를 불러오는 함수
+    function loadDiaryData() {
+        const selectedDate = document.getElementById('date-picker').value;
+
+        if (selectedDate) {
+            fetch(`${apiUrl}/date/${selectedDate}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.length > 0) {
+                        const diary = data[0];
+                        // 일기 내용과 이미지 표시
+                        document.getElementById('diary-display').style.display = 'block';
+                        document.getElementById('display-date').innerText = `날짜: ${diary.gameDate}`;
+                        document.getElementById('display-content').innerText = diary.diaryContent;
+                        document.getElementById('display-image').src = diary.imageUrl;  // 이미지 URL 표시
+                    } else {
+                        // 일기가 없으면 작성 폼 표시
+                        document.getElementById('diary-form').style.display = 'block';
+                    }
+                })
+                .catch(error => {
+                    console.error('일기를 불러오는 중 오류가 발생했습니다.', error);
+                });
+        }
+    }
+
+    // 일기 제출
+    function submitDiary() {
+        const selectedDate = document.getElementById('date-picker').value;
+        const diaryContent = document.getElementById('diary-content').value;
+        const diaryImage = document.getElementById('diary-image').files[0];
+
+        const formData = new FormData();
+        formData.append('gameDate', selectedDate);
+        formData.append('diaryContent', diaryContent);
+        if (diaryImage) {
+            formData.append('image', diaryImage);  // 이미지 파일
+        }
+
+        fetch(`${apiUrl}/add`, {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                alert('일기가 성공적으로 작성되었습니다!');
+                loadDiaryData();  // 새로 작성된 일기 로드
+            })
+            .catch(error => {
+                console.error('일기 제출 중 오류가 발생했습니다.', error);
+            });
+    }
+</script>
+</body>
+</html>
