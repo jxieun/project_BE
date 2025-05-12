@@ -1,5 +1,0 @@
-mysql -u root -p
-
-USE baseball_db
-
-SELECT * FROM diary;
