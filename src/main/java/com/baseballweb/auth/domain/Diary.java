@@ -29,7 +29,6 @@ public class Diary {
         this.imageUrl = imageUrl;
     }
 
-    // Getter and Setter
     public Long getId() {
         return id;
     }

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface GameScheduleRepository extends JpaRepository<GameSchedule, Long> {
-    // 추가적인 쿼리 메서드를 여기에 작성할 수 있습니다.
+    // 추가적인 쿼리 메서드
 }

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PlayerStatisticsRepository extends JpaRepository<PlayerStatistics, Long> {
-    // 추가적으로 필요한 쿼리를 여기에 정의할 수 있습니다.
+    // 추가적으로 필요한 쿼리 정의
 }

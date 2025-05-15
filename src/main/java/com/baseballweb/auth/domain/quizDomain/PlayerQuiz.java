@@ -39,7 +39,5 @@ public class PlayerQuiz {
         this.imageUrl = imageUrl;
     }
 
-//    @ManyToOne
-//    private User user;  // 문제를 생성한 사용자
 
 }

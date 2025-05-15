@@ -29,7 +29,6 @@ public class Score {
         this.score = score;
     }
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }

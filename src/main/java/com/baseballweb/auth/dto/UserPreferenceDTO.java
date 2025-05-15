@@ -16,7 +16,6 @@ public class UserPreferenceDTO {
         this.themeColor = themeColor;
     }
 
-    // Getter 및 Setter
     public String getTeamName() {
         return teamName;
     }

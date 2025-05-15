@@ -38,6 +38,4 @@ public class KboTermQuiz {
         isCorrect = correct;
     }
 
-
-    // Getters and Setters
 }

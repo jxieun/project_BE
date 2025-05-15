@@ -18,7 +18,6 @@ public class PlayerStatisticsDTO {
         this.battingAvg = battingAvg;
     }
 
-    // Getter 및 Setter
     public String getPlayerName() {
         return playerName;
     }
