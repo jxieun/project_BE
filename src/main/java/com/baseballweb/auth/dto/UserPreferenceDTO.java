@@ -9,7 +9,6 @@ public class UserPreferenceDTO {
     public UserPreferenceDTO() {
     }
 
-    // 파라미터화된 생성자
     public UserPreferenceDTO(String teamName, String playerName, String themeColor) {
         this.teamName = teamName;
         this.playerName = playerName;

@@ -10,7 +10,6 @@ public class PlayerStatisticsDTO {
     public PlayerStatisticsDTO() {
     }
 
-    // 파라미터화된 생성자
     public PlayerStatisticsDTO(String playerName, String teamName, String position, double battingAvg) {
         this.playerName = playerName;
         this.teamName = teamName;

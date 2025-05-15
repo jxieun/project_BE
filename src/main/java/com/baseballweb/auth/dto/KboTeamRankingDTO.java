@@ -11,14 +11,12 @@ public class KboTeamRankingDTO {
     public KboTeamRankingDTO() {
     }
 
-    // 파라미터화된 생성자
     public KboTeamRankingDTO(String teamName, int rank, LocalDate date) {
         this.teamName = teamName;
         this.rank = rank;
         this.date = date;
     }
 
-    // Getter 및 Setter
     public String getTeamName() {
         return teamName;
     }
