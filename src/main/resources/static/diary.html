@@ -56,7 +56,7 @@
 </div>
 
 <script>
-    const apiUrl = "http://localhost:8080/api/diary"; // 백엔드 API
+    const apiUrl = window.location.origin + "/api/diary"; // 백엔드 API
 
     // 날짜 선택 시 해당 일기의 데이터를 불러오는 함수
     function loadDiaryData() {
