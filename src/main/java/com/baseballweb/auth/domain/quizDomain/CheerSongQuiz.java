@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+//React에서 <iframe> 또는 YouTube API를 사용하면, YouTube 영상을 직접 플레이어처럼 삽입하여 재생
+//embed/   ->//웹사이트 안에서 영상을 직접 보여주는 형식
 @Entity
 public class CheerSongQuiz {
     @Id
