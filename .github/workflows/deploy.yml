@@ -21,11 +21,8 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew clean build
 
-      - name:
-          확인: JAR 생성 여부
-        run: |
-          ./gradlew bootJar
-          find . -name "*.jar"
+      - name: Find JARs (debug)
+        run: find . -name "*.jar"
 
       - name: Copy JAR and yml to EC2
         uses: appleboy/scp-action@master
