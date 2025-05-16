@@ -27,7 +27,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ec2-user
           key: ${{ secrets.EC2_KEY }}
-          source: build/libs/auth-0.0.1-SNAPSHOT.jar
+          source: project_BE/build/libs/auth-0.0.1-SNAPSHOT.jar
           target: /home/ec2-user/app
 
       - name: SSH to EC2 and restart server
