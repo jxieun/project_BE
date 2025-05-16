@@ -21,13 +21,11 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew clean build
 
-      - name: Print full directory structure
+      - name:
+          확인: JAR 생성 여부
         run: |
-          echo "현재 위치: $(pwd)"
-          echo "상위 폴더 구조:"
-          ls -al
-          echo "하위 폴더 구조:"
-          ls -alR
+          ./gradlew bootJar
+          find . -name "*.jar"
 
       - name: Copy JAR and yml to EC2
         uses: appleboy/scp-action@master
