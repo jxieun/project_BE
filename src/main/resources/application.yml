@@ -1,14 +1,10 @@
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/baseball_db?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useSSL=false
-    username: root
-    password: 1234
+    url: jdbc:mysql://baseball.ch4m6gg2k84y.ap-northeast-2.rds.amazonaws.com:3306/baseball_db?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useSSL=false
+    username: admin
+    password: baseball123
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-
-file:
-  upload-dir: /path/to/save/images
 
   jpa:
     hibernate:
@@ -18,6 +14,12 @@ file:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: 8080
+
+file:
+  upload-dir: /path/to/save/images
 
   thymeleaf:
     prefix: classpath:/templates/
@@ -36,8 +38,6 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
 
-server:
-  port: 8080
 
 #logging:
 #  level:
