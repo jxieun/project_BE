@@ -44,8 +44,26 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           script: |
             cd /home/ec2-user/app
-            PID=$(lsof -ti :8080)
-            if [ -n "$PID" ]; then
-              kill -9 $PID
-            fi
-            nohup java -jar *.jar --server.port=8080 > log.txt 2>&1 &
+          
+            echo "현재 실행 중인 서버 종료 시도..."
+                  PID=$(lsof -ti :8080)
+                  if [ -n "$PID" ]; then
+                    echo "기존 서버(PID: $PID) 종료"
+                    kill -9 $PID
+                  else
+                    echo "기존 서버 없음"
+                  fi
+
+                  echo "실행 가능한 JAR 확인:"
+                  ls -al *.jar || { echo "JAR 파일 없음"; exit 1; }
+
+                  echo "서버 재실행"
+                  nohup java -jar *.jar --server.port=8080 > log.txt 2>&1 &
+
+                  sleep 5
+                  if lsof -i :8080; then
+                    echo "서버 실행 성공”
+                  else
+                    echo "서버 실행 실패"
+                    exit 1
+                  fi
