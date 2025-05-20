@@ -55,7 +55,7 @@ jobs:
                   fi
 
                   echo "실행 가능한 JAR 확인:"
-                  ls -al *.jar || { echo "JAR 파일 없음"; exit 1; }
+                  ls -al build/libs/*.jar || { echo "JAR 파일 없음"; exit 1; }
 
                   echo "서버 재실행"
                   nohup java -jar *.jar --server.port=8080 > log.txt 2>&1 &
