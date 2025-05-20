@@ -58,7 +58,7 @@ jobs:
                   ls -al build/libs/*.jar || { echo "JAR 파일 없음"; exit 1; }
 
                   echo "서버 재실행"
-                  nohup java -jar *.jar --server.port=8080 > log.txt 2>&1 &
+                  nohup java -jar build/libs/*.jar --server.port=8080 > log.txt 2>&1 &
 
                   sleep 5
                   if lsof -i :8080; then
