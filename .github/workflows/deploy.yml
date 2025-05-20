@@ -46,7 +46,7 @@ jobs:
             cd /home/ec2-user/app
           
             echo "현재 실행 중인 서버 종료 시도..."
-                  PID=$(lsof -ti :8080)
+                  PID=$(lsof -i :8080)
                   if [ -n "$PID" ]; then
                     echo "기존 서버(PID: $PID) 종료"
                     kill -9 $PID
