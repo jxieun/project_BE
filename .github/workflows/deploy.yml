@@ -62,7 +62,7 @@ jobs:
 
                   sleep 5
                   if lsof -i :8080; then
-                    echo "서버 실행 성공”
+                    echo "서버 실행 성공"
                   else
                     echo "서버 실행 실패"
                     exit 1
