@@ -17,14 +17,11 @@ public class Diary {
     private String diaryContent;  // 일기 내용
     private String imageUrl;  // 이미지 URL (S3 저장 링크)
 
-    // 기본 생성자 추가
     public Diary() {
     }
 
-    // 생성자
     public Diary(LocalDate gameDate, String diaryContent, String imageUrl) {
         this.gameDate = gameDate;
-        //this.opponentTeam = opponentTeam;
         this.diaryContent = diaryContent;
         this.imageUrl = imageUrl;
     }
@@ -44,14 +41,6 @@ public class Diary {
     public void setGameDate(LocalDate gameDate) {
         this.gameDate = gameDate;
     }
-
-//    public String getOpponentTeam() {
-//        return opponentTeam;
-//    }
-//
-//    public void setOpponentTeam(String opponentTeam) {
-//        this.opponentTeam = opponentTeam;
-//    }
 
     public String getDiaryContent() {
         return diaryContent;
