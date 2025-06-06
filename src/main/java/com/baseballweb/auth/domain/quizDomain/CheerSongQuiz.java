@@ -15,6 +15,9 @@ public class CheerSongQuiz {
 
     private String songUrl;  // 응원가 파일 URL
     private String teamName;  // 팀 이름
+    private String playerName;
+
+
 
     public Long getId() {
         return id;
@@ -38,5 +41,13 @@ public class CheerSongQuiz {
 
     public void setTeamName(String teamName) {
         this.teamName = teamName;
+    }
+
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
     }
 }
