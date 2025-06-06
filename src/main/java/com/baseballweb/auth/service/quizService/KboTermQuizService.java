@@ -22,7 +22,7 @@ public class KboTermQuizService {
 
         // 엔티티를 DTO로 변환
         for (KboTermQuiz quiz : quizzes) {
-            KboTermQuizDTO dto = new KboTermQuizDTO(quiz.getTerm(), quiz.isCorrect());
+            KboTermQuizDTO dto = new KboTermQuizDTO(quiz.getTerm(), quiz.getIsCorrect());
             dtoList.add(dto);
         }
 
@@ -33,7 +33,7 @@ public class KboTermQuizService {
     public void addKboTermQuiz(KboTermQuizDTO kboTermQuizDTO) {
         KboTermQuiz kboTermQuiz = new KboTermQuiz();
         kboTermQuiz.setTerm(kboTermQuizDTO.getTerm());
-        kboTermQuiz.setCorrect(kboTermQuizDTO.isCorrect());
+        kboTermQuiz.setIsCorrect(kboTermQuizDTO.getIsCorrect());
 
         // 엔티티를 데이터베이스에 저장
         kboTermQuizRepository.save(kboTermQuiz);

@@ -2,9 +2,9 @@ package com.baseballweb.auth.dto.quizDto;
 
 public class KboTermQuizDTO {
     private String term;
-    private boolean isCorrect;
+    private String isCorrect;
 
-    public KboTermQuizDTO(String term, boolean isCorrect) {
+    public KboTermQuizDTO(String term, String isCorrect) {
         this.term = term;
         this.isCorrect = isCorrect;
     }
@@ -17,11 +17,10 @@ public class KboTermQuizDTO {
         this.term = term;
     }
 
-    public boolean isCorrect() {
+    public String getIsCorrect() {
         return isCorrect;
     }
-
-    public void setCorrect(boolean isCorrect) {
+    public void setIsCorrect(String isCorrect) {
         this.isCorrect = isCorrect;
     }
 }

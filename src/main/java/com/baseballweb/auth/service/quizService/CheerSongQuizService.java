@@ -23,7 +23,7 @@ public class CheerSongQuizService {
 
         // 엔티티를 DTO로 변환
         for (CheerSongQuiz quiz : quizzes) {
-            CheerSongQuizDTO dto = new CheerSongQuizDTO(quiz.getSongUrl(), quiz.getTeamName());
+            CheerSongQuizDTO dto = new CheerSongQuizDTO(quiz.getSongUrl(), quiz.getTeamName(), quiz.getPlayerName());
             dtoList.add(dto);
         }
 
@@ -61,7 +61,7 @@ public class CheerSongQuizService {
 
         // CheerSongQuizDTO로 변환하여 클라이언트에 제공할 데이터 반환
         return selectedQuizzes.stream()
-                .map(quiz -> new CheerSongQuizDTO(quiz.getSongUrl(), quiz.getTeamName()))
+                .map(quiz -> new CheerSongQuizDTO(quiz.getSongUrl(), quiz.getTeamName(), quiz.getPlayerName()))
                 .collect(Collectors.toList());
     }
 }
