@@ -12,7 +12,9 @@ public class KboTermQuiz {
     private Long id;
 
     private String term;  // 용어
-    private boolean isCorrect;  // O/X 정답 (true: O, false: X)
+    private String isCorrect;  // 정답
+
+
 
     public Long getId() {
         return id;
@@ -30,12 +32,13 @@ public class KboTermQuiz {
         this.term = term;
     }
 
-    public boolean isCorrect() {
+    public String getIsCorrect() {
         return isCorrect;
     }
 
-    public void setCorrect(boolean correct) {
-        isCorrect = correct;
+    public void setIsCorrect(String isCorrect) {
+        this.isCorrect = isCorrect;
     }
+
 
 }
